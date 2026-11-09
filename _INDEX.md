@@ -135,5 +135,14 @@ Pendiente de definir. No asumir rutas ni proyectos registrados.
 - Usar la [plantilla de handoff](.ai/workflows/handoff_template.md)
   para preparar el relevo.
 
-La ubicación de los estados y de los handoffs completados
-queda pendiente de definir.
+### Estado compartido y relevos guardados
+
+- Leer el [estado compartido](.ai/memory/_STATE.md) al retomar
+  el contexto activo y actualizarlo al cerrar una tarea autorizada.
+- Guardar los handoffs completados en [.ai/memory/handoffs/](.ai/memory/handoffs/).
+- Nombrar cada handoff con fecha, hora, desplazamiento UTC y tema:
+  `AAAA-MM-DD_HHMMSS±HHMM_tema.md`.
+- El estado refleja la situación vigente; los handoffs conservan
+  el historial de los relevos.
+- Estas ubicaciones son compartidas entre IAs. La organización
+  por proyectos permanece pospuesta por decisión del usuario.
