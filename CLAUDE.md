@@ -1,0 +1,1 @@
+Redirige todo el contexto y lee inmediatamente el archivo _INDEX.md para obtener las instrucciones del sistema, perfil del usuario y mapa del repositorio.
