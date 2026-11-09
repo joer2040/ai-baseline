@@ -1,0 +1,9 @@
+# Contexto y configuración privados
+/_INDEX.local.md
+/.ai/settings.local.json
+/.mcp.local.json
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
