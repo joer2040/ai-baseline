@@ -128,5 +128,12 @@ Pendiente de definir. No asumir rutas ni proyectos registrados.
 - Resumir o trasladar el historial antes de superar los límites,
   preservando las decisiones y referencias relevantes.
 
-La ubicación de los estados y el formato definitivo de los
-handoffs se definirán en su módulo correspondiente.
+### Protocolo y plantilla de handoffs
+
+- Seguir el [protocolo de handoffs](.ai/workflows/handoff_protocol.md)
+  al cerrar o retomar una tarea.
+- Usar la [plantilla de handoff](.ai/workflows/handoff_template.md)
+  para preparar el relevo.
+
+La ubicación de los estados y de los handoffs completados
+queda pendiente de definir.
