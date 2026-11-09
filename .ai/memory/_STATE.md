@@ -5,7 +5,7 @@
 - Repositorio: https://github.com/joer2040/ai-baseline
 
 ## Objetivo actual
-Establecer el arranque y la continuidad del trabajo entre sesiones e IAs.
+Documentar el uso del repositorio y mantener la continuidad entre IAs.
 
 ## Completado
 - Índice central con perfil y reglas universales.
@@ -18,6 +18,7 @@ Establecer el arranque y la continuidad del trabajo entre sesiones e IAs.
 - .gitignore creado para contexto privado y variables de entorno.
 - Guía de arranque creada en .ai/workflows/startup_protocol.md.
 - Guía de arranque enlazada desde _INDEX.md.
+- README.md actualizado con la guía de uso aprobada.
 
 ## Decisiones aprobadas
 - Estado compartido: .ai/memory/_STATE.md.
@@ -36,5 +37,5 @@ Establecer el arranque y la continuidad del trabajo entre sesiones e IAs.
 ## Próximo paso
 - Acordar con el usuario qué módulo diseñar a continuación.
 - Autorización para implementar el siguiente módulo: pendiente.
-- La creación de la guía de arranque, su enlace en el índice
-  y la actualización del estado fueron autorizadas por el usuario.
+- La actualización de README.md y del estado compartido
+  fue autorizada por el usuario.
