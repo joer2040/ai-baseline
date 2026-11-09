@@ -81,6 +81,8 @@ ni sustituye los permisos o restricciones del entorno de ejecución.
 
 ## 4. Enrutamiento
 
+- Seguir el [protocolo de arranque universal](.ai/workflows/startup_protocol.md)
+  al iniciar una sesión o retomar el trabajo.
 - Identificar el proyecto activo a partir de la solicitud del usuario.
 - Consultar en este índice la ruta de su contexto específico.
 - Si no es posible identificar el proyecto de forma inequívoca,
