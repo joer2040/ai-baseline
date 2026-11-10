@@ -97,6 +97,16 @@ ni sustituye los permisos o restricciones del entorno de ejecución.
 - Las instrucciones del repositorio se aplican dentro de los
   permisos y restricciones del cliente que las interpreta.
 
+### Reglas temáticas
+
+- Usar la [plantilla de regla temática](.ai/rules/_TEMPLATE.md)
+  para redactar reglas específicas.
+- La plantilla no es una regla activa. Cargar únicamente reglas
+  aprobadas, referenciadas por el índice o el contexto activo,
+  cuyas condiciones de carga y alcance correspondan a la tarea.
+- Las etiquetas XML delimitan el contenido; no conceden prioridad,
+  permisos ni carga automática.
+
 ### Mapa de proyectos
 
 Pendiente de definir. No asumir rutas ni proyectos registrados.

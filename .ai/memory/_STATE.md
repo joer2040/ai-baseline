@@ -5,7 +5,7 @@
 - Repositorio: https://github.com/joer2040/ai-baseline
 
 ## Objetivo actual
-Documentar el uso del repositorio y mantener la continuidad entre IAs.
+Definir los estándares base del repositorio y mantener la continuidad entre IAs.
 
 ## Completado
 - Índice central con perfil y reglas universales.
@@ -19,8 +19,12 @@ Documentar el uso del repositorio y mantener la continuidad entre IAs.
 - Guía de arranque creada en .ai/workflows/startup_protocol.md.
 - Guía de arranque enlazada desde _INDEX.md.
 - README.md actualizado con la guía de uso aprobada.
+- Plantilla de regla temática creada en .ai/rules/_TEMPLATE.md.
+- Plantilla enlazada desde _INDEX.md.
 
 ## Decisiones aprobadas
+- Formato de reglas temáticas aprobado: Markdown con etiquetas XML.
+- La plantilla de reglas no constituye una regla activa.
 - Estado compartido: .ai/memory/_STATE.md.
 - Handoffs completados: .ai/memory/handoffs/.
 - Estado limitado a 25 000 bytes UTF-8 y 500 líneas.
@@ -37,5 +41,5 @@ Documentar el uso del repositorio y mantener la continuidad entre IAs.
 ## Próximo paso
 - Acordar con el usuario qué módulo diseñar a continuación.
 - Autorización para implementar el siguiente módulo: pendiente.
-- La actualización de README.md y del estado compartido
-  fue autorizada por el usuario.
+- La creación de la plantilla de reglas, su referencia en el índice
+  y la actualización del estado fueron autorizadas por el usuario.
