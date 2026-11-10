@@ -18,7 +18,7 @@ y las referencias necesarias para continuar.
 |---|---|
 | _INDEX.md | Perfil, reglas y mapa del contexto. |
 | CLAUDE.md | Redirección al índice para clientes compatibles. |
-| .ai/settings.json | Configuración compartida; actualmente vacía. |
+| .ai/settings.json | Rutas y límites compartidos en formato UCA 1.0. |
 | .ai/rules/ | Ubicación reservada para reglas específicas. |
 | .ai/skills/ | Ubicación reservada para skills y contratos. |
 | .ai/workflows/ | Protocolos y plantillas de trabajo. |
@@ -51,6 +51,16 @@ e indicar que su persistencia queda pendiente.
 
 Cada _STATE.md tiene un máximo de 25 000 bytes UTF-8
 y 500 líneas.
+
+## Configuración compartida
+
+[.ai/settings.json](.ai/settings.json) contiene las rutas del contexto
+y los workflows, además de los límites del estado compartido.
+Todas las rutas se resuelven desde la raíz del repositorio.
+Las convenciones están documentadas en [_INDEX.md](_INDEX.md).
+
+Cada integración debe interpretar este formato propio de UCA.
+El JSON no aplica configuraciones automáticamente.
 
 ## Configuración privada
 

@@ -97,6 +97,24 @@ ni sustituye los permisos o restricciones del entorno de ejecución.
 - Las instrucciones del repositorio se aplican dentro de los
   permisos y restricciones del cliente que las interpreta.
 
+### Configuración compartida
+
+- Consultar [.ai/settings.json](.ai/settings.json) para las rutas
+  y límites compartidos en formato legible por máquinas.
+- `config_version` identifica la versión del formato propio de UCA.
+- Todas las rutas del JSON se resuelven desde la raíz del repositorio,
+  aunque el archivo esté dentro de .ai/.
+- Las preferencias y reglas permanecen en sus documentos; no duplicarlas
+  en la configuración.
+- Las integraciones deben interpretar la configuración y comprobar los
+  límites. El JSON no configura clientes ni concede permisos por sí solo.
+- Si el JSON contradice este índice, señalar y resolver la diferencia
+  antes de actuar sobre ella.
+- Los ajustes de máquina pueden residir en .ai/settings.local.json,
+  excluido de Git. No pueden cambiar reglas, autorizaciones ni límites
+  compartidos. Su formato y mecanismo de carga quedan pendientes.
+- No incluir credenciales ni secretos en la configuración versionada.
+
 ### Reglas temáticas
 
 - Usar la [plantilla de regla temática](.ai/rules/_TEMPLATE.md)

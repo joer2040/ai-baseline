@@ -1,1 +1,17 @@
-{}
+{
+  "config_version": "1.0",
+  "context": {
+    "index": "_INDEX.md",
+    "startup_protocol": ".ai/workflows/startup_protocol.md"
+  },
+  "memory": {
+    "state": ".ai/memory/_STATE.md",
+    "handoffs_dir": ".ai/memory/handoffs",
+    "max_state_bytes": 25000,
+    "max_state_lines": 500
+  },
+  "workflows": {
+    "handoff_template": ".ai/workflows/handoff_template.md",
+    "handoff_protocol": ".ai/workflows/handoff_protocol.md"
+  }
+}

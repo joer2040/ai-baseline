@@ -21,8 +21,13 @@ Definir los estándares base del repositorio y mantener la continuidad entre IAs
 - README.md actualizado con la guía de uso aprobada.
 - Plantilla de regla temática creada en .ai/rules/_TEMPLATE.md.
 - Plantilla enlazada desde _INDEX.md.
+- Configuración compartida UCA 1.0 incorporada en .ai/settings.json.
+- Convenciones de configuración documentadas en _INDEX.md y README.md.
 
 ## Decisiones aprobadas
+- Configuración UCA 1.0: rutas relativas a la raíz y límites aprobados.
+- Ajustes locales sin capacidad de cambiar reglas, autorizaciones
+  ni límites compartidos.
 - Formato de reglas temáticas aprobado: Markdown con etiquetas XML.
 - La plantilla de reglas no constituye una regla activa.
 - Estado compartido: .ai/memory/_STATE.md.
@@ -41,5 +46,5 @@ Definir los estándares base del repositorio y mantener la continuidad entre IAs
 ## Próximo paso
 - Acordar con el usuario qué módulo diseñar a continuación.
 - Autorización para implementar el siguiente módulo: pendiente.
-- La creación de la plantilla de reglas, su referencia en el índice
-  y la actualización del estado fueron autorizadas por el usuario.
+- La actualización de settings.json, _INDEX.md, README.md y del
+  estado compartido fue autorizada por el usuario.
