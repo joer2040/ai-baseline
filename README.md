@@ -62,6 +62,14 @@ Las convenciones están documentadas en [_INDEX.md](_INDEX.md).
 Cada integración debe interpretar este formato propio de UCA.
 El JSON no aplica configuraciones automáticamente.
 
+### Validación de configuración
+
+Validar .ai/settings.json con [.ai/settings.schema.json](.ai/settings.schema.json)
+mediante un validador compatible con JSON Schema Draft 2020-12.
+El schema comprueba campos, tipos, versión, formato de rutas y límites
+configurados. No comprueba que los destinos existan ni el tamaño real
+del estado. Su incorporación no instala ni activa un validador automático.
+
 ## Configuración privada
 
 .gitignore excluye el contexto y la configuración locales

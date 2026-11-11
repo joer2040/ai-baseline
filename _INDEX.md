@@ -99,6 +99,14 @@ ni sustituye los permisos o restricciones del entorno de ejecución.
 
 ### Configuración compartida
 
+- Validar .ai/settings.json con el [JSON Schema UCA 1.0](.ai/settings.schema.json)
+  usando un validador compatible con JSON Schema Draft 2020-12.
+- El schema exige los campos aprobados, rechaza propiedades desconocidas,
+  valida el formato de rutas y conserva los límites de 25 000 bytes y
+  500 líneas. No comprueba la existencia de archivos ni el tamaño real
+  del estado, y no se ejecuta automáticamente.
+- Las rutas del formato 1.0 admiten letras ASCII, números, guiones,
+  puntos y guiones bajos, con / como separador y sin segmentos . ni ...
 - Consultar [.ai/settings.json](.ai/settings.json) para las rutas
   y límites compartidos en formato legible por máquinas.
 - `config_version` identifica la versión del formato propio de UCA.

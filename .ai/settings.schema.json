@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Configuración compartida UCA 1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "config_version",
+    "context",
+    "memory",
+    "workflows"
+  ],
+  "properties": {
+    "config_version": {
+      "const": "1.0"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index",
+        "startup_protocol"
+      ],
+      "properties": {
+        "index": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "startup_protocol": {
+          "$ref": "#/$defs/repository_path"
+        }
+      }
+    },
+    "memory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "handoffs_dir",
+        "max_state_bytes",
+        "max_state_lines"
+      ],
+      "properties": {
+        "state": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "handoffs_dir": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "max_state_bytes": {
+          "type": "integer",
+          "const": 25000
+        },
+        "max_state_lines": {
+          "type": "integer",
+          "const": 500
+        }
+      }
+    },
+    "workflows": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "handoff_template",
+        "handoff_protocol"
+      ],
+      "properties": {
+        "handoff_template": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "handoff_protocol": {
+          "$ref": "#/$defs/repository_path"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "repository_path": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Ruta relativa a la raíz, con / como separador; sin segmentos . ni ..",
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*$"
+    }
+  }
+}

@@ -24,7 +24,12 @@ Definir los estándares base del repositorio y mantener la continuidad entre IAs
 - Configuración compartida UCA 1.0 incorporada en .ai/settings.json.
 - Convenciones de configuración documentadas en _INDEX.md y README.md.
 
+- Schema creado en .ai/settings.schema.json y documentado en índice y README.
+- Configuración actual validada con jsonschema Draft202012Validator;
+  13 casos inválidos rechazados en comprobaciones previas a publicar.
+
 ## Decisiones aprobadas
+- JSON Schema Draft 2020-12 aprobado para configuración UCA 1.0.
 - Configuración UCA 1.0: rutas relativas a la raíz y límites aprobados.
 - Ajustes locales sin capacidad de cambiar reglas, autorizaciones
   ni límites compartidos.
@@ -46,5 +51,5 @@ Definir los estándares base del repositorio y mantener la continuidad entre IAs
 ## Próximo paso
 - Acordar con el usuario qué módulo diseñar a continuación.
 - Autorización para implementar el siguiente módulo: pendiente.
-- La actualización de settings.json, _INDEX.md, README.md y del
-  estado compartido fue autorizada por el usuario.
+- La creación del schema y la actualización del índice, README y estado
+  compartido fueron autorizadas por el usuario.
