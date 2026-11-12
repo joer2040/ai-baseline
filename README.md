@@ -70,6 +70,29 @@ El schema comprueba campos, tipos, versión, formato de rutas y límites
 configurados. No comprueba que los destinos existan ni el tamaño real
 del estado. Su incorporación no instala ni activa un validador automático.
 
+### Comprobación local del repositorio
+
+Requiere Python 3.10 o posterior. Desde la raíz del repositorio:
+
+```sh
+python -m pip install -r requirements-dev.txt
+python scripts/validate_uca.py
+```
+
+El script localiza la raíz desde su propia ubicación; no depende del
+directorio desde el que se ejecute. Solo lee archivos y reporta errores.
+Comprueba el JSON contra su schema, los destinos como archivos o carpetas
+y que las rutas resueltas permanezcan dentro del repositorio.
+Comprueba también que memory.state sea UTF-8 y no supere sus límites.
+
+Los bytes se cuentan sobre el archivo guardado, incluidos los saltos
+de línea. Para contar líneas, LF, CRLF y CR cuentan como un salto;
+el salto final no añade una línea vacía y un archivo vacío tiene 0 líneas.
+
+Devuelve 0 cuando todo cumple y 1 ante errores, incluidos JSON inválido,
+archivos inaccesibles o una dependencia ausente. La ejecución en
+GitHub Actions queda pendiente.
+
 ## Configuración privada
 
 .gitignore excluye el contexto y la configuración locales
@@ -84,3 +107,4 @@ Los archivos locales no se cargan automáticamente por existir.
 - Auditoría de capacidades por entorno.
 - Incorporación de skills, plugins, servidores MCP y conectores.
 - Configuración de entrada para cada aplicación.
+

@@ -28,6 +28,12 @@ Definir los estándares base del repositorio y mantener la continuidad entre IAs
 - Configuración actual validada con jsonschema Draft202012Validator;
   13 casos inválidos rechazados en comprobaciones previas a publicar.
 
+- Validador local creado en scripts/validate_uca.py con dependencia
+  jsonschema==4.26.0 en requirements-dev.txt y comandos en README.
+- Verificación previa a publicar: 33 comprobaciones correctas;
+  configuración, rutas, UTF-8, límites, LF/CRLF/CR y códigos 0/1.
+- Las comprobaciones confirmaron que el validador no modifica archivos.
+
 ## Decisiones aprobadas
 - JSON Schema Draft 2020-12 aprobado para configuración UCA 1.0.
 - Configuración UCA 1.0: rutas relativas a la raíz y límites aprobados.
@@ -49,7 +55,8 @@ Definir los estándares base del repositorio y mantener la continuidad entre IAs
 - Mantener pendientes proyectos y auditoría hasta nueva indicación.
 
 ## Próximo paso
-- Acordar con el usuario qué módulo diseñar a continuación.
-- Autorización para implementar el siguiente módulo: pendiente.
-- La creación del schema y la actualización del índice, README y estado
-  compartido fueron autorizadas por el usuario.
+- Diseñar con el usuario la ejecución en GitHub Actions.
+- Su implementación requiere aprobación; no se ha creado ningún workflow.
+- El usuario autorizó publicar el validador, la dependencia, el README
+  y este estado en main.
+- Auditoría, inventarios y organización de proyectos siguen pospuestos.
