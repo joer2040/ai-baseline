@@ -90,8 +90,23 @@ For line counting, LF, CRLF, and CR each count as one line break;
 a final line break does not add an empty line, and an empty file has 0 lines.
 
 Returns 0 when all checks pass and 1 on errors, including invalid JSON,
-inaccessible files, or a missing dependency. Execution in
-GitHub Actions remains pending.
+inaccessible files, or a missing dependency.
+
+### GitHub Actions Validation
+
+[UCA Validation](.github/workflows/validate_uca.yml) runs on pull requests,
+pushes to main, and manual dispatches. It uses Python 3.14 on Ubuntu 24.04,
+installs requirements-dev.txt, and runs the same validator used locally.
+
+The workflow has read-only repository permissions and reports failures
+without editing repository files. Actions are pinned to commit SHAs.
+
+To run it manually, open the repository's Actions tab, select
+"UCA Validation", choose "Run workflow", and select main.
+Review the "Validate UCA" job and its step logs for the result.
+
+These checks report repository validity. Requiring them before merging
+depends on separate branch protection or ruleset configuration.
 
 ## Private Configuration
 

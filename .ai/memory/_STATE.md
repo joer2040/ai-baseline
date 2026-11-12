@@ -38,6 +38,10 @@ Define the repository's base standards and maintain continuity across AI assista
 - Translation checks: all 33 validator checks passed again; schema rules,
   configured paths, ignore patterns, and Markdown link targets preserved.
 
+- GitHub Actions workflow added at .github/workflows/validate_uca.yml.
+- Workflow YAML and local validator checked before publication.
+- First GitHub Actions execution: pending verification after publication.
+
 ## Approved Decisions
 - JSON Schema Draft 2020-12 approved for UCA 1.0 configuration.
 - UCA 1.0 configuration: paths relative to the root and approved limits.
@@ -55,13 +59,16 @@ Define the repository's base standards and maintain continuity across AI assista
 - Repository content translated into English; the user's default
   collaboration language remains Spanish.
 
+- Automated checks approved for pull requests, pushes to main,
+  and manual dispatches, with read-only repository permissions.
+
 ## Pending Items
 - Define the remaining modules with the user.
 - Keep projects and the audit pending until further instruction.
 
 ## Next Step
-- Design execution in GitHub Actions with the user.
-- Implementation requires approval; no workflow has been created.
-- The user authorized publishing the validator, dependency, README,
-  and shared state to main, then requested the English translation.
+- Verify the first GitHub Actions execution and record its outcome.
+- The user authorized publication of the workflow, README, and shared
+  state in main, plus verification of the first execution.
+- After verification, agree on the next module with the user.
 - Audit, inventories, and project organization remain postponed.
