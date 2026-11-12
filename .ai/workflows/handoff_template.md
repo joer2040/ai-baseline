@@ -1,44 +1,44 @@
 # Handoff
 
-## Identificación
-- Versión del formato: 1.0
-- Proyecto o contexto:
-- Tarea:
-- IA de origen:
-- Fecha: [ISO 8601 con zona horaria]
+## Identification
+- Format version: 1.0
+- Project or context:
+- Task:
+- Originating AI:
+- Date: [ISO 8601 with time zone]
 
-## Objetivo y alcance
-- Solicitud del usuario:
-- Alcance autorizado:
-- Restricciones aplicables:
+## Objective and Scope
+- User request:
+- Authorized scope:
+- Applicable restrictions:
 
-## Estado actual
-- Terminado:
-- En curso:
-- Bloqueado:
+## Current State
+- Completed:
+- In progress:
+- Blocked:
 
-## Decisiones
-- Aprobadas:
-- Propuestas pendientes de aprobación:
+## Decisions
+- Approved:
+- Proposals pending approval:
 
-## Cambios y evidencia
-- Cambios realizados:
-- Referencias: [archivos, commits o enlaces]
-- Verificaciones y resultados:
-- Aspectos sin verificar:
+## Changes and Evidence
+- Changes made:
+- References: [files, commits, or links]
+- Checks and results:
+- Unverified aspects:
 
-## Pendientes
-- Trabajo restante:
-- Dudas por resolver:
-- Bloqueos y dependencias:
+## Pending Items
+- Remaining work:
+- Questions to resolve:
+- Blockers and dependencies:
 
-## Próximo paso
-- Acción concreta:
-- Autorización: [autorizada / requiere aprobación]
-- Referencia de la autorización, si existe:
+## Next Step
+- Specific action:
+- Authorization: [authorized / requires approval]
+- Authorization reference, if any:
 
-## Instrucciones para retomar
-- Consultar _INDEX.md y el contexto específico aplicable.
-- Verificar el estado vigente de los archivos involucrados.
-- Resolver contradicciones antes de ejecutar cambios.
-- No interpretar este handoff como autorización adicional.
+## Instructions for Resuming
+- Consult _INDEX.md and the applicable specific context.
+- Verify the current state of the files involved.
+- Resolve contradictions before making changes.
+- Do not interpret this handoff as additional authorization.

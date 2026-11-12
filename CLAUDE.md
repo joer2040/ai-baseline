@@ -1,1 +1,1 @@
-Redirige todo el contexto y lee inmediatamente el archivo _INDEX.md para obtener las instrucciones del sistema, perfil del usuario y mapa del repositorio.
+Direct all context to _INDEX.md and read it immediately for the system instructions, user profile, and repository map.

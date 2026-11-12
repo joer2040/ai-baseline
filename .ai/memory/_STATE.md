@@ -1,62 +1,67 @@
-# Estado compartido
+# Shared State
 
-## Contexto activo
+## Active Context
 - AI Second Brain — Universal Context Architecture (UCA).
-- Repositorio: https://github.com/joer2040/ai-baseline
+- Repository: https://github.com/joer2040/ai-baseline
 
-## Objetivo actual
-Definir los estándares base del repositorio y mantener la continuidad entre IAs.
+## Current Objective
+Define the repository's base standards and maintain continuity across AI assistants.
 
-## Completado
-- Índice central con perfil y reglas universales.
-- Plantilla y protocolo de handoffs.
-- Enlaces a ambos documentos desde _INDEX.md.
-- Estado compartido creado en .ai/memory/_STATE.md.
-- Carpeta .ai/memory/handoffs/ conservada mediante .gitkeep.
-- Referencias a ambas ubicaciones incorporadas en _INDEX.md.
+## Completed
+- Central index with the user profile and universal rules.
+- Handoff template and protocol.
+- Links to both documents from _INDEX.md.
+- Shared state created in .ai/memory/_STATE.md.
+- .ai/memory/handoffs/ directory preserved through .gitkeep.
+- References to both locations added to _INDEX.md.
 
-- .gitignore creado para contexto privado y variables de entorno.
-- Guía de arranque creada en .ai/workflows/startup_protocol.md.
-- Guía de arranque enlazada desde _INDEX.md.
-- README.md actualizado con la guía de uso aprobada.
-- Plantilla de regla temática creada en .ai/rules/_TEMPLATE.md.
-- Plantilla enlazada desde _INDEX.md.
-- Configuración compartida UCA 1.0 incorporada en .ai/settings.json.
-- Convenciones de configuración documentadas en _INDEX.md y README.md.
+- .gitignore created for private context and environment variables.
+- Startup guide created in .ai/workflows/startup_protocol.md.
+- Startup guide linked from _INDEX.md.
+- README.md updated with the approved usage guide.
+- Topic rule template created in .ai/rules/_TEMPLATE.md.
+- Template linked from _INDEX.md.
+- UCA 1.0 shared configuration added in .ai/settings.json.
+- Configuration conventions documented in _INDEX.md and README.md.
 
-- Schema creado en .ai/settings.schema.json y documentado en índice y README.
-- Configuración actual validada con jsonschema Draft202012Validator;
-  13 casos inválidos rechazados en comprobaciones previas a publicar.
+- Schema created in .ai/settings.schema.json and documented in the index and README.
+- Current configuration validated with jsonschema Draft202012Validator;
+  13 invalid cases rejected during checks before publication.
 
-- Validador local creado en scripts/validate_uca.py con dependencia
-  jsonschema==4.26.0 en requirements-dev.txt y comandos en README.
-- Verificación previa a publicar: 33 comprobaciones correctas;
-  configuración, rutas, UTF-8, límites, LF/CRLF/CR y códigos 0/1.
-- Las comprobaciones confirmaron que el validador no modifica archivos.
+- Local validator created in scripts/validate_uca.py, with
+  jsonschema==4.26.0 in requirements-dev.txt and commands in README.
+- Checks before publication: 33 passed;
+  configuration, paths, UTF-8, limits, LF/CRLF/CR, and exit codes 0/1.
+- Checks confirmed that the validator does not modify files.
+- Repository documentation, templates, comments, schema descriptions,
+  and validator messages translated into English at the user's request.
+- Translation checks: all 33 validator checks passed again; schema rules,
+  configured paths, ignore patterns, and Markdown link targets preserved.
 
-## Decisiones aprobadas
-- JSON Schema Draft 2020-12 aprobado para configuración UCA 1.0.
-- Configuración UCA 1.0: rutas relativas a la raíz y límites aprobados.
-- Ajustes locales sin capacidad de cambiar reglas, autorizaciones
-  ni límites compartidos.
-- Formato de reglas temáticas aprobado: Markdown con etiquetas XML.
-- La plantilla de reglas no constituye una regla activa.
-- Estado compartido: .ai/memory/_STATE.md.
-- Handoffs completados: .ai/memory/handoffs/.
-- Estado limitado a 25 000 bytes UTF-8 y 500 líneas.
-- Estado y handoffs compartidos entre IAs.
-- Organización de proyectos pospuesta por el usuario.
-- Auditoría e inventario pospuestos por el usuario.
-- Guía de arranque universal aprobada; cada cliente requiere
-  un mecanismo compatible para cargar el índice.
+## Approved Decisions
+- JSON Schema Draft 2020-12 approved for UCA 1.0 configuration.
+- UCA 1.0 configuration: paths relative to the root and approved limits.
+- Local settings cannot change shared rules, authorizations, or limits.
+- Approved topic rule format: Markdown with XML tags.
+- The rule template is not an active rule.
+- Shared state: .ai/memory/_STATE.md.
+- Completed handoffs: .ai/memory/handoffs/.
+- State limited to 25,000 UTF-8 bytes and 500 lines.
+- State and handoffs shared across AI assistants.
+- Project organization postponed by the user.
+- Audit and inventory postponed by the user.
+- Universal startup guide approved; each client needs
+  a compatible mechanism to load the index.
+- Repository content translated into English; the user's default
+  collaboration language remains Spanish.
 
-## Pendientes
-- Definir los módulos restantes con el usuario.
-- Mantener pendientes proyectos y auditoría hasta nueva indicación.
+## Pending Items
+- Define the remaining modules with the user.
+- Keep projects and the audit pending until further instruction.
 
-## Próximo paso
-- Diseñar con el usuario la ejecución en GitHub Actions.
-- Su implementación requiere aprobación; no se ha creado ningún workflow.
-- El usuario autorizó publicar el validador, la dependencia, el README
-  y este estado en main.
-- Auditoría, inventarios y organización de proyectos siguen pospuestos.
+## Next Step
+- Design execution in GitHub Actions with the user.
+- Implementation requires approval; no workflow has been created.
+- The user authorized publishing the validator, dependency, README,
+  and shared state to main, then requested the English translation.
+- Audit, inventories, and project organization remain postponed.

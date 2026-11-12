@@ -9,7 +9,7 @@ try:
     from jsonschema import Draft202012Validator
     from jsonschema.exceptions import SchemaError
 except ImportError:
-    print("ERROR: falta jsonschema. Ejecuta: python -m pip install -r requirements-dev.txt")
+    print("ERROR: jsonschema is missing. Run: python -m pip install -r requirements-dev.txt")
     raise SystemExit(1)
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,7 +27,7 @@ def load_json(path):
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeError, ValueError) as exc:
-        raise ValueError(f"{path.name}: no se pudo leer JSON UTF-8: {exc}") from exc
+        raise ValueError(f"{path.name}: could not read UTF-8 JSON: {exc}") from exc
 
 
 def validate(root):
@@ -42,28 +42,28 @@ def validate(root):
         return [str(exc)]
 
     for error in Draft202012Validator(schema).iter_errors(settings):
-        field = ".".join(str(part) for part in error.absolute_path) or "<raiz>"
+        field = ".".join(str(part) for part in error.absolute_path) or "<root>"
         errors.append(f"settings.json [{field}]: {error.message}")
     if errors:
         return errors  # Do not use structurally invalid configuration.
 
     resolved = {}
-    for fields, expected in ((FILE_FIELDS, "archivo"), (DIRECTORY_FIELDS, "carpeta")):
+    for fields, expected in ((FILE_FIELDS, "file"), (DIRECTORY_FIELDS, "directory")):
         for section, key in fields:
             value = settings[section][key]
             label = f"{section}.{key}"
             try:
                 target = (root / value).resolve()
                 if not target.is_relative_to(root):
-                    errors.append(f"{label}: la ruta sale del repositorio: {value}")
+                    errors.append(f"{label}: path resolves outside the repository: {value}")
                     continue
-                correct_type = target.is_file() if expected == "archivo" else target.is_dir()
+                correct_type = target.is_file() if expected == "file" else target.is_dir()
                 if not correct_type:
-                    errors.append(f"{label}: se esperaba {expected} existente: {value}")
+                    errors.append(f"{label}: expected an existing {expected}: {value}")
                     continue
                 resolved[label] = target
             except (OSError, RuntimeError) as exc:
-                errors.append(f"{label}: no se pudo resolver {value}: {exc}")
+                errors.append(f"{label}: could not resolve {value}: {exc}")
 
     state = resolved.get("memory.state")
     if state is not None:
@@ -77,14 +77,14 @@ def validate(root):
             memory = settings["memory"]
             if len(data) > memory["max_state_bytes"]:
                 errors.append(
-                    f"memory.state: {len(data)} bytes UTF-8; maximo {memory['max_state_bytes']}"
+                    f"memory.state: {len(data)} UTF-8 bytes; maximum {memory['max_state_bytes']}"
                 )
             if lines > memory["max_state_lines"]:
                 errors.append(
-                    f"memory.state: {lines} lineas; maximo {memory['max_state_lines']}"
+                    f"memory.state: {lines} lines; maximum {memory['max_state_lines']}"
                 )
         except (OSError, UnicodeError) as exc:
-            errors.append(f"memory.state: no se pudo leer como UTF-8: {exc}")
+            errors.append(f"memory.state: could not read as UTF-8: {exc}")
     return errors
 
 
@@ -93,9 +93,9 @@ def main():
     for error in errors:
         print(f"ERROR: {error}")
     if errors:
-        print(f"UCA: validacion fallida ({len(errors)} errores).")
+        print(f"UCA: validation failed ({len(errors)} errors).")
         return 1
-    print("UCA: configuracion, rutas y limites del estado correctos.")
+    print("UCA: configuration, paths, and state limits passed.")
     return 0
 
 

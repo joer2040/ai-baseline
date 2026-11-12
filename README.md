@@ -1,110 +1,109 @@
 # AI Second Brain — UCA
 
-Repositorio central de contexto para colaborar con distintas
-IAs mediante una base compartida, explícita y versionada.
+Central context repository for collaborating with different
+AI assistants through a shared, explicit, versioned foundation.
 
-UCA es la convención de organización adoptada en este repositorio.
-Cada aplicación requiere una integración compatible para utilizarla.
+UCA is the organizational convention adopted in this repository.
+Each application needs a compatible integration to use it.
 
-## Punto de entrada
+## Entry Point
 
-Las IAs deben comenzar leyendo [_INDEX.md](_INDEX.md).
-Este archivo contiene el perfil base, las reglas de colaboración
-y las referencias necesarias para continuar.
+AI assistants must start by reading [_INDEX.md](_INDEX.md).
+This file contains the base profile, collaboration rules,
+and references needed to continue.
 
-## Organización
+## Organization
 
-| Ruta | Contenido |
+| Path | Contents |
 |---|---|
-| _INDEX.md | Perfil, reglas y mapa del contexto. |
-| CLAUDE.md | Redirección al índice para clientes compatibles. |
-| .ai/settings.json | Rutas y límites compartidos en formato UCA 1.0. |
-| .ai/rules/ | Ubicación reservada para reglas específicas. |
-| .ai/skills/ | Ubicación reservada para skills y contratos. |
-| .ai/workflows/ | Protocolos y plantillas de trabajo. |
-| .ai/memory/_STATE.md | Estado vigente compartido entre IAs. |
-| .ai/memory/handoffs/ | Relevos completados entre sesiones. |
+| _INDEX.md | Profile, rules, and context map. |
+| CLAUDE.md | Redirect to the index for compatible clients. |
+| .ai/settings.json | Shared paths and limits in UCA 1.0 format. |
+| .ai/rules/ | Reserved location for specific rules. |
+| .ai/skills/ | Reserved location for skills and contracts. |
+| .ai/workflows/ | Work protocols and templates. |
+| .ai/memory/_STATE.md | Current state shared across AI assistants. |
+| .ai/memory/handoffs/ | Completed handoffs between sessions. |
 
-## Iniciar una sesión
+## Starting a Session
 
-Proporciona a la IA acceso al repositorio e indica:
+Give the AI assistant access to the repository and instruct it:
 
-> Lee _INDEX.md de joer2040/ai-baseline. Sigue el protocolo
-> de arranque y consulta el estado compartido antes de continuar.
-> Si no puedes acceder a algún archivo necesario, indícalo.
+> Read _INDEX.md in joer2040/ai-baseline. Follow the startup
+> protocol and consult the shared state before continuing.
+> If you cannot access a required file, say so.
 
-El protocolo está en:
-[Arranque universal](.ai/workflows/startup_protocol.md).
+The protocol is available here:
+[Universal startup](.ai/workflows/startup_protocol.md).
 
-La carga automática depende de la configuración de cada cliente.
-Guardar archivos en GitHub no configura las aplicaciones.
+Automatic loading depends on each client's configuration.
+Storing files in GitHub does not configure applications.
 
-## Cerrar o transferir una tarea
+## Closing or Transferring a Task
 
-Usar el [protocolo de handoffs](.ai/workflows/handoff_protocol.md)
-y la [plantilla de relevo](.ai/workflows/handoff_template.md).
+Use the [handoff protocol](.ai/workflows/handoff_protocol.md)
+and the [handoff template](.ai/workflows/handoff_template.md).
 
-Actualizar el estado compartido dentro del alcance autorizado.
-El estado conserva la situación vigente y los handoffs registran
-los relevos. Si no se puede guardar, entregar el relevo en el chat
-e indicar que su persistencia queda pendiente.
+Update the shared state within the authorized scope.
+The state holds the current situation and handoffs record transitions.
+If saving is not possible, deliver the handoff in the chat
+and indicate that persistence is pending.
 
-Cada _STATE.md tiene un máximo de 25 000 bytes UTF-8
-y 500 líneas.
+Each _STATE.md file is limited to 25,000 UTF-8 bytes
+and 500 lines.
 
-## Configuración compartida
+## Shared Configuration
 
-[.ai/settings.json](.ai/settings.json) contiene las rutas del contexto
-y los workflows, además de los límites del estado compartido.
-Todas las rutas se resuelven desde la raíz del repositorio.
-Las convenciones están documentadas en [_INDEX.md](_INDEX.md).
+[.ai/settings.json](.ai/settings.json) contains context and workflow
+paths, along with the shared state limits.
+All paths resolve from the repository root.
+Conventions are documented in [_INDEX.md](_INDEX.md).
 
-Cada integración debe interpretar este formato propio de UCA.
-El JSON no aplica configuraciones automáticamente.
+Each integration must interpret this UCA-specific format.
+The JSON does not apply settings automatically.
 
-### Validación de configuración
+### Configuration Validation
 
-Validar .ai/settings.json con [.ai/settings.schema.json](.ai/settings.schema.json)
-mediante un validador compatible con JSON Schema Draft 2020-12.
-El schema comprueba campos, tipos, versión, formato de rutas y límites
-configurados. No comprueba que los destinos existan ni el tamaño real
-del estado. Su incorporación no instala ni activa un validador automático.
+Validate .ai/settings.json against [.ai/settings.schema.json](.ai/settings.schema.json)
+using a validator compatible with JSON Schema Draft 2020-12.
+The schema checks fields, types, version, path formatting, and configured
+limits. It does not check whether targets exist or the actual state
+file size. Adding it does not install or activate an automatic validator.
 
-### Comprobación local del repositorio
+### Local Repository Check
 
-Requiere Python 3.10 o posterior. Desde la raíz del repositorio:
+Requires Python 3.10 or later. From the repository root:
 
 ```sh
 python -m pip install -r requirements-dev.txt
 python scripts/validate_uca.py
 ```
 
-El script localiza la raíz desde su propia ubicación; no depende del
-directorio desde el que se ejecute. Solo lee archivos y reporta errores.
-Comprueba el JSON contra su schema, los destinos como archivos o carpetas
-y que las rutas resueltas permanezcan dentro del repositorio.
-Comprueba también que memory.state sea UTF-8 y no supere sus límites.
+The script locates the root from its own location; it does not depend
+on the directory from which it is run. It only reads files and reports errors.
+It validates the JSON against its schema, checks targets as files or
+directories, and ensures resolved paths remain within the repository.
+It also checks that memory.state is UTF-8 and stays within its limits.
 
-Los bytes se cuentan sobre el archivo guardado, incluidos los saltos
-de línea. Para contar líneas, LF, CRLF y CR cuentan como un salto;
-el salto final no añade una línea vacía y un archivo vacío tiene 0 líneas.
+Bytes are counted from the saved file, including line endings.
+For line counting, LF, CRLF, and CR each count as one line break;
+a final line break does not add an empty line, and an empty file has 0 lines.
 
-Devuelve 0 cuando todo cumple y 1 ante errores, incluidos JSON inválido,
-archivos inaccesibles o una dependencia ausente. La ejecución en
-GitHub Actions queda pendiente.
+Returns 0 when all checks pass and 1 on errors, including invalid JSON,
+inaccessible files, or a missing dependency. Execution in
+GitHub Actions remains pending.
 
-## Configuración privada
+## Private Configuration
 
-.gitignore excluye el contexto y la configuración locales
-acordados, además de archivos de variables de entorno.
+.gitignore excludes the agreed local context and configuration files,
+as well as environment variable files.
 
-No guardar credenciales ni secretos en archivos versionados.
-Los archivos locales no se cargan automáticamente por existir.
+Do not store credentials or secrets in versioned files.
+Local files are not loaded automatically merely because they exist.
 
-## Pendientes
+## Pending Items
 
-- Organización y registro de proyectos.
-- Auditoría de capacidades por entorno.
-- Incorporación de skills, plugins, servidores MCP y conectores.
-- Configuración de entrada para cada aplicación.
-
+- Project organization and registration.
+- Capability audit for each environment.
+- Incorporation of skills, plugins, MCP servers, and connectors.
+- Entry mechanism configuration for each application.

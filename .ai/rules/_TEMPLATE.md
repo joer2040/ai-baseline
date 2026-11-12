@@ -1,36 +1,36 @@
-# Plantilla de regla temática
+# Topic Rule Template
 
-Esta plantilla no es una regla activa.
-Los campos entre corchetes deben completarse antes de usarla.
+This template is not an active rule.
+Complete the fields in brackets before using it.
 
-<rule id="[identificador]" version="1.0">
+<rule id="[identifier]" version="1.0">
 
 <status>
-[borrador | aprobada | retirada]
+[draft | approved | retired]
 </status>
 
 <scope>
-[Tema y situaciones donde aplica.]
+[Topic and situations where this rule applies.]
 </scope>
 
 <load_when>
-[Condiciones concretas para consultar esta regla.]
+[Specific conditions for consulting this rule.]
 </load_when>
 
 <directives>
-- [Instrucción concreta y verificable.]
-- [Instrucción concreta y verificable.]
+- [Specific, verifiable instruction.]
+- [Specific, verifiable instruction.]
 </directives>
 
 <conflicts>
-- Aplicar esta regla únicamente dentro de su alcance
-  y cuando su estado sea "aprobada".
-- Respetar las instrucciones de mayor prioridad y los
-  permisos del entorno.
-- No interpretar esta regla como autorización adicional.
-- Si existe una contradicción sin resolver, señalarla
-  y solicitar la decisión necesaria antes de actuar
-  sobre el punto afectado.
+- Apply this rule only within its scope
+  and when its status is "approved".
+- Respect higher-priority instructions and
+  the environment's permissions.
+- Do not interpret this rule as additional authorization.
+- If an unresolved contradiction exists, flag it
+  and request the necessary decision before acting
+  on the affected point.
 </conflicts>
 
 </rule>

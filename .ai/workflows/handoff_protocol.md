@@ -1,32 +1,32 @@
-# Protocolo de handoffs
+# Handoff Protocol
 
-## Cuándo generar un handoff
-- Al terminar una tarea.
-- Al cambiar de IA.
-- Al interrumpir trabajo que deba continuar después.
-- No es necesario generar uno por cada mensaje.
+## When to Generate a Handoff
+- When completing a task.
+- When switching AI assistants.
+- When interrupting work that needs to continue later.
+- A handoff is not required for every message.
 
-## Cierre
-1. Usar .ai/workflows/handoff_template.md.
-2. Registrar resultados, decisiones, pendientes y evidencia.
-3. Distinguir propuestas, aprobaciones y acciones ejecutadas.
-4. Indicar el próximo paso y su alcance autorizado.
-5. Marcar los campos sin información como "No aplica",
-   "No realizado" o "Pendiente de confirmar", según corresponda.
-6. Guardar en la ubicación acordada y verificar lo guardado.
-   Si no existe una ubicación o no es posible guardar,
-   entregar el handoff en el chat y marcar su persistencia
-   como pendiente.
+## Closing
+1. Use .ai/workflows/handoff_template.md.
+2. Record results, decisions, pending items, and evidence.
+3. Distinguish proposals, approvals, and completed actions.
+4. State the next step and its authorized scope.
+5. Mark fields without information as "Not applicable",
+   "Not performed", or "Pending confirmation", as appropriate.
+6. Save in the agreed location and verify the saved content.
+   If there is no location or saving is not possible,
+   deliver the handoff in the chat and mark persistence
+   as pending.
 
-## Retoma
-1. Leer _INDEX.md.
-2. Leer el handoff pertinente y el contexto necesario.
-3. Verificar los archivos y el estado actuales.
-4. Resolver diferencias relevantes antes de ejecutar cambios.
-5. Continuar dentro del alcance autorizado.
-6. Consultar al usuario si falta una decisión necesaria.
+## Resuming
+1. Read _INDEX.md.
+2. Read the relevant handoff and necessary context.
+3. Verify the current files and state.
+4. Resolve significant differences before making changes.
+5. Continue within the authorized scope.
+6. Consult the user if a necessary decision is missing.
 
-## Límites
-- El handoff no concede permisos adicionales.
-- No incluir credenciales ni secretos.
-- No afirmar verificaciones que no se realizaron.
+## Limits
+- A handoff does not grant additional permissions.
+- Do not include credentials or secrets.
+- Do not claim checks that were not performed.
